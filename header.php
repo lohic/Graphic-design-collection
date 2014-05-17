@@ -30,7 +30,7 @@
 		<?php
 				languages_list();
 				function languages_list(){
-				    $languages = icl_get_languages('skip_missing=0&orderby=code');
+				    $languages = icl_get_languages('skip_missing=0'); // &orderby=code
 				    if(!empty($languages)){
 				    	$i = 0;
 				        foreach($languages as $l){
@@ -53,5 +53,5 @@
 		<div class="clear"></div>
 	</header>
 	
-	
+	<!-- end header.php -->
 	

@@ -1,9 +1,13 @@
 <?php get_header(); ?>
 
+<!-- single-collection.php -->
+
 <content>
 	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>">
-				<h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>				
+				<?php dimox_breadcrumbs(); ?>
+
+				<h1><?php the_title(); ?></h1>				
 					<div class="post_content">
 						<p class="url"><a href="<?php the_field('collection_url');?>"><?php the_field('collection_url');?></a></p>
 						<?php //the_content(); ?>
@@ -37,6 +41,8 @@
 	<?php edit_post_link('Modifier cette page', '<p>', '</p>'); ?>
 	<?php endif; ?>
 </content>
+
+<!-- end single-collection.php -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

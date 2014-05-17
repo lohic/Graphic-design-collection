@@ -30,7 +30,7 @@ if( ! function_exists (my_register_post_types)) {
 				'public' => true,
 				'show_ui' => true,
 				//'show_in_menu' => false,
-				'menu_icon'=> get_bloginfo('template_directory') .'/images/collection.png',
+				'menu_icon'=> 'dashicons-media-spreadsheet',
 				'show_in_nav_menus'=> false,
 				'capability_type' => 'post',
 				'rewrite' => array("slug" => "collection"),
@@ -53,7 +53,7 @@ if( ! function_exists (my_register_post_types)) {
 function my_scripts_method() {
     wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'leaflet',      get_template_directory_uri() . '/js/leaflet-0.7.2/leaflet.js', false, '0.7.2', true );
-	wp_enqueue_script( 'gdc',     	   get_template_directory_uri() . '/js/script.js', array('jquery'),'1.0.0', true );
+	wp_enqueue_script( 'gdc',     	   get_template_directory_uri() . '/js/script.js', array('jquery','leaflet'),'1.0.1', true );
 	wp_enqueue_style( 'leaflet-style', get_template_directory_uri() . '/js/leaflet-0.7.2/leaflet.css', false, '0.7.2', 'all' );
 }
 
@@ -163,7 +163,7 @@ function dimox_breadcrumbs() {
 
 		if ( get_query_var('paged') ) {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-			echo __('Page') . ' ' . get_query_var('paged');
+			echo __(' Page') . ' ' . get_query_var('paged');
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
 

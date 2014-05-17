@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
+<!-- index.php -->
+
 <content>
+
+	<?php dimox_breadcrumbs(); ?>
+
 	<?php
-	  
-	global $wp_query;
-	$args = array_merge( $wp_query->query, array( 'post_type' => 'collection', 'posts_per_page' => '10'  ) );
-	query_posts( $args );
 	
 	if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 			<article class="post" id="post-<?php the_ID(); ?>">
@@ -27,6 +28,8 @@
 	<?php include (TEMPLATEPATH . "/searchform.php"); ?>
 	<?php endif; ?>
 </content>
+
+<!-- end index.php -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -212,6 +212,49 @@ a:hover{ color:#000; }
 }
 
 
+#map{
+	height: 600px;
+}
+
+
+.breadcrumb {
+	list-style-type: none;
+	margin-bottom: 1em;
+	font-size: 0.8em;
+}
+
+.breadcrumb li{
+	list-style-type: none;
+	display: inline-block;
+}
+
+.breadcrumb li:before{
+	content: "/ ";
+}
+
+.breadcrumb li:first-child:before{
+	content: "";
+}
+
+.pagination{
+	list-style-type: none;
+	margin-bottom: 1em;
+}
+
+.pagination li{
+	list-style-type: none;
+	display: inline-block;
+	margin-right: 3px;
+}
+
+.pagination li:before{
+	
+	content: "/ ";
+}
+
+.pagination li:first-child:before{
+	content: "";
+}
 
 
 /* OSM */
